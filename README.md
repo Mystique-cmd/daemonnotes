@@ -3,12 +3,17 @@ File source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
 Tool: radare2
 
  ## Understanding How The File Works
+ 
+ Before running the commands the first command to be run should be :
+```
+aaa
+```
  ### Imports and Exports
  List the imported and exported symbols to get the API surface of the binary
- ~~~
+```
  ii # listing the imported Symbol
 is # listing the exported symbols
-~~~
+```
 ### Entry Points
 Look for main or _start and trace the initialization path. This tells you how the program boots up
 ```
