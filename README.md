@@ -1,6 +1,6 @@
 # Patching Documentation
- file source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
- Tool: radare2
+File source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
+Tool: radare2
 
  ## Understanding How The File Works
  ### Imports and Exports
@@ -18,7 +18,7 @@ Found there was no main function using this command
 ```
  afl | grep main  #filter through the functions looking for main
 ```
-![](/images/image0.png)
+![The main function](/images/image0.png)
  
 ### Critical  Functions
 Focusing on functions that interact with external libraries
