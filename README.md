@@ -18,11 +18,40 @@ Found there was no main function using this command
 ```
  afl | grep main  #filter through the functions looking for main
 ```
-![The main function](/images/image0.png)
+![Entry Function](/images/image0.png)
  
 ### Critical  Functions
-Focusing on functions that interact with external libraries
+These are functions that drive the program's logic, interact with external libraries or handle sensitive data. The techniques include:
+#### a) Cross References
+To see which functions are heavily referenced. Functions with many callers are often central to program flow
+```
+axt
+```
+#### b) String References
+To list strings to see which functions use them. Functions tied to error messages, protocol names or file paths are usually important
+```
+iz	#to list strings
+axt <string >	# to see which functions use them
+```
+#### c) Imports Usage
+Functions that wrap calls to external libraries are critical glue points. Trace them with:
+```
+axt sym.imp<function>
+```
+#### d) Exports
+If the binary exports functions, those are meant to be used externally - often key APIs
 
+#### e) Function Size
+List all functions. Larger functions ( many instructions ) often contain core logic rather than trival wrappers
+```
+afl
+```
+#### g) Control Flow Graphs
+Visualize. Complex branching functions are usually critical decision points
+```
+VV
+agf <function>
+```
 ### Cross References
 This builds a map of dependencies without need to decode every line
 
