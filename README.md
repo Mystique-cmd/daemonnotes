@@ -1,5 +1,5 @@
 # Patching Documentation
- The file itself was sourced from : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
+ file source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
 
 ## Function Listing
 ```
