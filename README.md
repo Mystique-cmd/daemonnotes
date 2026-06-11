@@ -10,6 +10,10 @@ is # listing the exported symbols
 ~~~
 ### Entry Points
 Look for main or _start and trace the initialization path. This tells you how the program boots up
+```
+ie #
+```
+![](/images/image0.png)
  
 ### Critical  Functions
 Focusing on functions that interact with external libraries
