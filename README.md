@@ -32,6 +32,7 @@ To see which functions are heavily referenced. Functions with many callers are o
 ```
 axt
 ```
+![](/images/image1.png)
 #### b) String References
 To list strings to see which functions use them. Functions tied to error messages, protocol names or file paths are usually important
 ```
