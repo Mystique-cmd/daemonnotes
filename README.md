@@ -1,5 +1,6 @@
 # Patching Documentation
  file source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
+ Tool: radare2
 
  ## Understanding How The File Works
  ### Imports and Exports
@@ -11,7 +12,11 @@ is # listing the exported symbols
 ### Entry Points
 Look for main or _start and trace the initialization path. This tells you how the program boots up
 ```
-ie #
+ie # looks for _start
+```
+Found there was no main function using this command
+```
+ afl | grep main  #filter through the functions looking for main
 ```
 ![](/images/image0.png)
  
