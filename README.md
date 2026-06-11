@@ -1,7 +1,25 @@
 # Patching Documentation
  file source : [ https://github.com/JonathanSalwan/binary-samples/tree/master ]
 
-## Function Listing
+ ## Understanding How The File Works
+ ### Imports and Exports
+ List the imported and exported symbols to get the API surface of the binary
+ ~~~
+ ii # listing the imported Symbol
+is # listing the exported symbols
+~~~
+### Entry Points
+Look for main or _start and trace the initialization path. This tells you how the program boots up
+ 
+### Critical  Functions
+Focusing on functions that interact with external libraries
+
+### Cross References
+This builds a map of dependencies without need to decode every line
+
+### Assertions and Error Paths
+These often reveal assumptions about runtime behaviour
+
 ```
 aaa #analyze all the things
 alf  #list the functions
