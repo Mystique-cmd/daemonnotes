@@ -58,6 +58,13 @@ Visualize. Complex branching functions are usually critical decision points
 VV
 agf <function>
 ```
+To use the Visualization src.interactive should be set to true
+```
+e scr.interactive=true
+r2 -e scr.interactive=true ./binary #starting r2 with interactive mode enabled
+```
+![](/images/image2.png)
+![](/images/image3.png)
 ### Cross References
 This builds a map of dependencies without need to decode every line
 
