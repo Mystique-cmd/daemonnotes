@@ -65,28 +65,22 @@ r2 -e scr.interactive=true ./binary #starting r2 with interactive mode enabled
 ```
 ![](/images/image2.png)
 ![](/images/image3.png)
-### Cross References
-This builds a map of dependencies without need to decode every line
 
-### Assertions and Error Paths
-These often reveal assumptions about runtime behaviour
-
+Since I have already done the zoning in into the major sections of the binary, the next step is to decide on the patch to do. There are several ways to go about it by I choose Injection of Custom Logic. These involves several steps as shown below:
+### a) Find a Code Cave
+Here I am looking for padding alignment gaps or unused sections in .text or other executable segments. Incase no cave exists i can simply add mine to the binary.
 ```
-aaa #analyze all the things
-alf  #list the functions
+px #hexdump
+iS  #list Sections
 ```
-
-![Functions snippet](/images/image.png)
-
-## Analyzing the Functions
-` pdf @ function_name`
-### sym.imp.xcb_render_create_picture
-![Function code](/images/image1.png)
-
-Used XREFs to list all places where the stub is called
-` axt sym.imp.xcb_render_create_picture `
-![](/images/image2.png)
-
-Disassembled the call site, to see the logic around it
-` pdf @ <address> `
-![](/images/image3.png)
+The two commands are used to search for padding  by spotting long runs of 0x00 or 0xCC and the output is as follows
+![](/images/image4.png)
+![](/images/image5.png)
+The first thing was to chech if the file sizes and the virtual sizes had a difference but from the output we can deduce there was no difference in the sizes thus no code cave. ( This is to be done on the iS output )
+On the px output I was looking for long strings of 00 ( null ) or CC ( int3) but as seen in the output it si not there thus no code cave.
+For px we can search for large ranges in .text section to see if we can get the indicators of a code cave:
+```
+px 512 
+px 1024
+```
+Still there was not enough. What is required is about 16-32 contiguous bytes or more. Since I found no cave i decided to fallback to creating my own section and create the cave there
