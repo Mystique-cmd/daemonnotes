@@ -84,3 +84,12 @@ px 512
 px 1024
 ```
 Still there was not enough. What is required is about 16-32 contiguous bytes or more. Since I found no cave i decided to fallback to creating my own section and create the cave there
+```
+perl -e 'print "\x90"x256' > cave bin # creating the binary file to attach
+```
+Add the section to the elf binary. Though objcopy does not directly attach the new section to an existing segment but rather it only sets section flags
+```
+objcopy --add-section .cave=cave.bin \
+        --set-section-flags .cave=code,alloc,load,readonly \
+        elf-Linux-lib-x64.so patched.elf
+```
