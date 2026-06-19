@@ -93,3 +93,27 @@ objcopy --add-section .cave=cave.bin \
         --set-section-flags .cave=code,alloc,load,readonly \
         elf-Linux-lib-x64.so patched.elf
 ```
+After creating the LIEF file run it to properly add the section to the existing ELF binary
+```
+g++ LIEF.cpp -o cave -llief
+./cave
+```
+Note: You need to do a download of the  LIEF system library before running the program
+```
+#Clone the repo
+
+git clone https://github.com/lief-project/LIEF.git
+cd LIEF
+
+#Build and Install
+
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+sudo make install
+
+#Compile the program
+
+g++ LIEF.cpp -o cave -I/usr/local/include -L/usr/local/lib -llief
+
+```
