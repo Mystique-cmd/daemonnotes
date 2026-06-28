@@ -1,3 +1,0 @@
-https://www.googletagmanager.com/gtag/js?id=AW-960335887
-https://www.googletagmanager.com/gtag/js?id=G-31EH4XPW51
-https://accounts.google.com/gsi/button?type=standard&shape=rectangular&theme=outline&size=large&logo_alignment=left&text=continue_with&width=700&click_listener=()%3D%3E%7Bf%26%26f()%2C(0%2Cc.Xi)(%22Google%20OAuth%20Button%20Clicked%22)%2C(0%2Co.ykQ)()%26%26g%26%26(0%2Cu.ng)(%60%24%7Bg%7D%24%7Bwindow.location.search%7D%60)%7D&is_fedcm_supported=true&client_id=1069747104247-1klj08vd2b2hlha38p7qm1b6hke3s238.apps.googleusercontent.com&iframe_id=gsi_745063_533265&cas=PonbE5cR%2Fhd1R8EAPcFBpv2ky2qauTG8P5VQG%2BFEDM8

@@ -113,3 +113,15 @@ When comparing the responses we look for:
 	f) Messages
 	g) Any variation
 If there are any variations the endpoint is raceable
+
+You can also check the Dev tools network console to determine if the processes are atomic or not
+The presence of several calls on the network tab shows that the process is not atomic but that does not guarantee that there is a race conditon because the backend may not be like the front end .
+Even after finding that thebackend is multistep that simply means that a race window exist the next step is to determine if the backend protects those steps or does not. It can be protected in the following ways
+	a) Backend uniqueness constraints
+	b) Backend locking
+	c) Backend transactions
+	d) Backend idempotency
+For this you need to learn how to interpret the dev tools properly
+
+How to determine if a backend is atomic
+a) It exposes only one endpoint
